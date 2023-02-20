@@ -18,14 +18,11 @@ var player1_coin = document.createElement('div')
 player1_coin.setAttribute('id','player_coin1')
 player1_coin.innerText = 'PLAYER'
 
+
 var inplay_credit = 0
 var bank_credit = 100
 var current_player = true
 var player_counter = [0,0,0]
-
-const siteWidth = 1415;
-const scale = window.innerWidth / siteWidth;
-document.querySelector(".container").style.transform = `scale(${scale})`; 
 
 window.addEventListener('load',start)
 window.addEventListener('load',collect)
