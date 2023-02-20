@@ -2,6 +2,21 @@
     text-align: center;
     font-family: 'Sans', sans-serif;
 }
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+
+  }
+  
+  .container {
+    width: 1366px;
+    height: 768px;
+  }
+  
 
 #snake_box{
     display: grid;
