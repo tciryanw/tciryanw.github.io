@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Snakes & Ladders</title>
+        <link rel="stylesheet" href="resources/css/game.css">
+    </head>
+
+    <body>
+        <div id="position_header">
+            <small>
+                This is a client-side test application for remake of real slotmachine and is to be it's real-time lightboard showing the current hardware state of slotmachine.
+            </small>
+        </div>
+        <div id="position_header">
+            <small>
+                View picture of <a href="resources/original_game.jpg" >hardware slotmachine</a>.
+            </small>
+        </div>
+
+        <hr>
+        <div id="position_header">Credit (bank):</div>
+        <h5 id="credit_number">100</h5>
+        <div id="position_header">Inplay:</div>
+        <h5 id="inplay_number">0</h5>
+
+            <div id="dice" >
+                <h1 id="dice_number">0</h1>
+            </div>
+            <button id="dice_button">Start / Continue</button>
+            <button id="collect_button">Collect</button>
+            <div id="position_header">
+                <small>
+                    You can 'continue' after hitting 3x symbol. If you hit nothing, you lose all inplay. Yellow colored boxes refers to the light/leds being activated on slot.
+                </small>
+            </div>
+            <hr>
+            
+            <div id="position_header">Event:</div>
+            <small id="event_position">loaded_game</small>
+            <div id="position_header">Current Position:</div>
+            <small id="current_position">start</small>
+            <div id="position_header">Previous Position:</div>
+            <small id="previous_position">start</small>
+
+
+        <div id="container_box" >
+            <div class="side_box" >
+            </div>
+
+            <div id="snake_box">
+                <div id="box_47"><div id="lightable_47" class="lightable"></div>47</div>
+                <div id="box_46" class="pay_triple_bar"><div id="lightable_46" class="lightable"></div>46</div>
+                <div id="box_45" class="pay_single_temp_bar"><div id="lightable_45" class="lightable"></div>45</div>
+                <div id="box_44"><div id="lightable_44" class="lightable"></div>44</div>
+                <div id="box_43"><div id="lightable_43" class="lightable"></div>43</div>
+                <div id="box_42"><div id="lightable_42" class="lightable"></div>42</div>
+                <div id="box_36" class="pay_single_temp_melon"><div id="lightable_36" class="lightable"></div>36</div>
+                <div id="box_37"><div id="lightable_37" class="lightable"></div>37</div>
+                <div id="box_38" class="pay_triple_melon"><div id="lightable_38" class="lightable"></div>38</div>
+                <div id="box_39"><div id="lightable_39" class="lightable"></div>39</div>
+                <div id="box_40"><div id="lightable_40" class="lightable"></div>40</div>
+                <div id="box_41"><div id="lightable_41" class="lightable"></div>41</div>
+                <div id="box_35"><div id="lightable_35" class="lightable"></div>35</div>
+                <div id="box_34" class="pay_triple_bell"><div id="lightable_34" class="lightable"></div>34</div>
+                <div id="box_33"><div id="lightable_33" class="lightable"></div>33</div>
+                <div id="box_32" class="pay_single_temp_bell"><div id="lightable_32" class="lightable"></div>32</div>
+                <div id="box_31"><div id="lightable_31" class="lightable"></div>31</div>
+                <div id="box_30"><div id="lightable_30" class="lightable"></div>30</div>
+                <div id="box_24"><div id="lightable_24" class="lightable"></div>24</div>
+                <div id="box_25" class="pay_single_temp_grapes"><div id="lightable_25" class="lightable"></div>25</div>
+                <div id="box_26"><div id="lightable_26" class="lightable"></div>26</div>
+                <div id="box_27" class="pay_triple_grapes"><div id="lightable_27" class="lightable"></div>27</div>
+                <div id="box_28"><div id="lightable_28" class="lightable"></div>28</div>
+                <div id="box_29"><div id="lightable_29" class="lightable"></div>29</div>
+                <div id="box_23"><div id="lightable_23" class="lightable"></div>23</div>
+                <div id="box_22"><div id="lightable_22" class="lightable"></div>22</div>
+                <div id="box_21" class="pay_single_temp_mango"><div id="lightable_21" class="lightable"></div>21</div>
+                <div id="box_20" class="snake_20"><div id="lightable_20" class="lightable"></div>20</div>
+                <div id="box_19" class="pay_triple_mango"><div id="lightable_19" class="lightable"></div>19</div>
+                <div id="box_18"><div id="lightable_18" class="lightable"></div>18</div>
+                <div id="box_12"><div id="lightable_12" class="lightable"></div>12</div>
+                <div id="box_13" class="pay_triple_orange"><div id="lightable_13" class="lightable"></div>13</div>
+                <div id="box_14"><div id="lightable_14" class="lightable"></div>14</div>
+                <div id="box_15"><div id="lightable_15" class="lightable"></div>15</div>
+                <div id="box_16" class="pay_single_temp_orange"><div id="lightable_16" class="lightable"></div>16</div>
+                <div id="box_17"><div id="lightable_17" class="lightable"></div>17</div>
+                <div id="box_11"><div id="lightable_11" class="lightable"></div>11</div>
+                <div id="box_10" class="pay_single_temp_lemon"><div id="lightable_10" class="lightable"></div>10</div>
+                <div id="box_9"><div id="lightable_9" class="lightable"></div>9</div>
+                <div id="box_8" class="pay_triple_lemon"><div id="lightable_8" class="lightable"></div>8</div>
+                <div id="box_7"><div id="lightable_7" class="lightable"></div>7</div>
+                <div id="box_6"><div id="lightable_6" class="lightable"></div>6</div>
+                <div id="box_0"><span id="start_coin"><div id="lightable" class="lightable"></div>start</span></div>
+                <div id="box_1"><div id="lightable_1" class="lightable"></div>1</div>
+                <div id="box_2" class="pay_triple_cherry"><div id="lightable_2" class="lightable"></div>2</div>
+                <div id="box_3"><div id="lightable_3" class="lightable"></div>3</div>
+                <div id="box_4"><div id="lightable_4" class="lightable"></div>4</div>
+                <div id="box_5" class="pay_single_temp_cherry"><div id="lightable_5" class="lightable"></div>5</div>
+            </div>
+
+            <div class="side_box"><div id="lightable" class="lightable"></div>
+            </div>
+
+        </div>
+
+        <script type="text/javascript" src="resources/js/game.js" ></script>
+    </body>
+</html>
