@@ -1,14 +1,20 @@
 ## Snakes & Ladders Frontend
-
+[tciryanw.github.io](https://tciryanw.github.io)
 
 ### Client front testing app for hardware slotmachine remake
 For portfolio, remaking a hardware slots, replacing all it's internals and remaking the game logic completely, this is a supporting testing app.
 
-It will be for testing RTP while developing the hardware slot's logic and in the end will be a light-board where you can see hardware slot's current machine state from remote as admin and adjust rtp settings etc.
+This client is for testing RTP while developing the hardware slot's logic/software, after completing this will remain within admin panel and serve as real-time lights-board.
 
+Panel will log all previous events, vtp, cash-in, cash-out and so on where this will be part of lights-board to see and review hardware slot's current machine state.
+
+
+## State
 Currently unfinished while I think how I am to implement the hardware slot's power level bar.
 
-![alt text](https://i.ibb.co/pxmY55P/New-Project-5.png)
+## Slot
+The slotmachine hardware is 'Thrills n spills' by Barcrest, made in 1993.
 
-### Test area
-[tciryanw.github.io](https://tciryanw.github.io)
+![alt text](https://raw.githubusercontent.com/tciryanw/tciryanw.github.io/main/resources/original_game.jpg)
+
+![alt text](https://i.ibb.co/pxmY55P/New-Project-5.png)
