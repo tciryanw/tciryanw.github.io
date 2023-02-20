@@ -49,9 +49,6 @@ function start(){
 function collect(){
     collect_button.addEventListener('click', collect_function)
 }
-function gamble(){
-    gamble_button.addEventListener('click', gamble_function)
-}
 
 function update_bank(number) {
     bank_credit = number
@@ -63,15 +60,22 @@ function update_inplay(number) {
 }
 
 function collect_function() {
-    update_bank((bank_credit + inplay_credit))
-    update_inplay(0)
+    if(inplay_credit > 0) {
+        if(reset_game === false) {
+            update_bank((bank_credit + inplay_credit))
+            update_inplay(0)
+            reset_game = true
+        }
+    }
 }
 function gamble_function() {
     dice_rolled()
 }
 
 function start_function() {
-    update_bank(bank_credit - 1)
+    if(reset_game === true) {
+        update_bank(bank_credit - 1)
+    }
     dice_rolled()
 }
 
