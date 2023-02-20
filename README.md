@@ -1,6 +1,8 @@
 ## Snakes & Ladders Frontend
 [tciryanw.github.io](https://tciryanw.github.io)
 
+![alt text](https://raw.githubusercontent.com/tciryanw/tciryanw.github.io/main/resources/preview.png)
+
 ### Client front testing app for hardware slotmachine remake
 For portfolio, remaking a hardware slots, replacing all it's internals and remaking the game logic completely, this is a supporting testing app.
 
@@ -12,8 +14,10 @@ Panel will log all previous events, vtp, cash-in, cash-out and so on where this 
 ## State
 Currently unfinished while I think how I am to implement the hardware slot's power level bar.
 
-## Slot
-The slotmachine hardware is 'Thrills n spills' by Barcrest, made in 1993.
+
+
+## Hardware Slot
+This frontend is representing a hardware slotmachine layout. This slotmachine is called 'Thrills n spills' and was made by Barcrest, made in 1993.
 
 ![alt text](https://raw.githubusercontent.com/tciryanw/tciryanw.github.io/main/resources/original_game.jpg)
 
