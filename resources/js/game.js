@@ -24,10 +24,11 @@ var win_single_symbols = [0,1,2,3,4,5,6,7]
 // cherry(2x) -> lemon(4x) -> orange(6x) -> mango(8x) -> grapes (10x) -> bell (14x) -> melon (20x) -> bar (30x)
 var paytable_state = [0,0,0,0,0,0,0,0]
 var paytable_payout = [2,4,6,8,10,14,20,30]
+var paytable_light_state = [0,0,0,0,0,0,0,0]
 
 
 var inplay_credit = 0
-var bank_credit = 100
+var bank_credit = 500
 var current_player = true
 var player_counter = [0,0,0]
 
@@ -73,9 +74,7 @@ function gamble_function() {
 }
 
 function start_function() {
-    if(reset_game === true) {
-        update_bank(bank_credit - 1)
-    }
+    update_bank(bank_credit - 1)
     dice_rolled()
 }
 
@@ -173,10 +172,12 @@ function lights_on(number){
 
 function append_element(player, dicenumber_rolled){
     if(reset_game === true) {
+        update_inplay(0)
         var player_next_position = document.getElementById(id_creator(0))
         player_next_position.append(player1_coin)
         player_counter[player] = 0
         paytable_state = [0,0,0,0,0,0,0,0]
+        paytable_light_state = [0,0,0,0,0,0,0,0]
         for(i=0; i<win_single_symbols.length; i++){
             var light_paytable_id = '.lightable_paytable_' + win_single_symbols[i] 
             var lineItem = document.querySelectorAll(light_paytable_id)
@@ -190,7 +191,6 @@ function append_element(player, dicenumber_rolled){
         counter(player)
         console.log(player_counter[player])
         update_log(player_counter[player], 'roll_regular')
-        update_inplay(0)
         var player_next_position = document.getElementById(id_creator(player_counter[player]))
         player_next_position.append(player1_coin)
         reset_game = true
@@ -198,22 +198,22 @@ function append_element(player, dicenumber_rolled){
         payout_check(player_counter[player],player)
         lights_on(player_counter[player])
         options_after_game()
-    }, 500) // Increase the delay time by 20ms for each item
-
+    }, 200) 
 }
 
 function options_after_game() {
     if(reset_game === true) {
-        options_after.innerText = "start (from 0)"
+        update_inplay(0)
+        options_after.innerHTML = "<span style='color: red; font-weight: 500;'>start again (lost)</span>"
         options_after_reason.innerText = "(hit empty tile, lost any inplay credit)"
     }
     if(reset_game === false) {
         if(inplay_credit > 0) {
-        options_after.innerText = "continue or collect "+inplay_credit
+        options_after.innerHTML = "<span style='color: green; font-weight: 500;'>continue or collect "+inplay_credit+"</span>"
         options_after_reason.innerText = "(you risk losing all inplay credit)"
 
         } else {
-            options_after.innerText = "continue"
+            options_after.innerHTML = "<span style='color: orange; font-weight: 500;'>continue</span>"
             options_after_reason.innerText = "(you have hit a single fruit, ladder or snake)"
         }
     }
@@ -237,15 +237,18 @@ function snake_or_ladder(counter , player){
 }
 
 function update_paytable_single(symbol_id) {
-    update_log(player_counter[1], paytable_payout[symbol_id])
-    if(paytable_state[symbol_id] > 1) {
+    if(paytable_state[symbol_id] > 2) {
+        if(paytable_state[symbol_id] < 4) {
         update_inplay(paytable_payout[symbol_id] + inplay_credit)
-        paytable_state[symbol_id] = 0
+        //paytable_state[symbol_id] = 0
+        }
+        paytable_light_state[symbol_id] = 3;
     } else {
         paytable_state[symbol_id] = (paytable_state[symbol_id] + 1)
+        paytable_light_state[symbol_id] = (paytable_state[symbol_id])
         update_log(player_counter[1], "Paytable state updated to: "+paytable_state[symbol_id])
     }
-    paytable_lights_update(symbol_id, paytable_state[symbol_id])
+    paytable_lights_update(symbol_id, paytable_light_state[symbol_id])
 }
 
 function paytable_lights_update(symbol_id,state){
@@ -265,7 +268,9 @@ function paytable_lights_update(symbol_id,state){
 function payout_check(counter,player){
     for(d=0; d<win_3x_pos.length; d++){
         if(counter == win_3x_pos[d]){
+            var win3x_payout_symbol = win_single_symbols[d];
             update_inplay(win_3x_payout[d] + inplay_credit)
+            paytable_lights_update(win3x_payout_symbol, (paytable_light_state[win3x_payout_symbol] + 3))
             reset_game = false
         }
     }

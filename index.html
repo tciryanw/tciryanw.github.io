@@ -9,17 +9,22 @@
         <div class="container">
         <div id="position_header">
             <small>
-                This is a client-side test application for remake of real slotmachine and is to be it's real-time lightboard showing the current hardware state of slotmachine.
+                This is a client-side test application for remake software inside a barcrest hardware slot. View pic of <a href="resources/original_game.jpg" >hardware slotmachine</a>.
             </small>
-        </div>
-        <div id="position_header">
-            <small>
-                View picture of <a href="resources/original_game.jpg" >hardware slotmachine</a>.
-            </small>
-
+            <hr>
             <div id="position_header">
                 <small>
                     You get reset to 'start' position if you hit a regular (empty) tile, any other tile you have choice to collect (if you have inplay balance) or continue.
+                </small>
+            </div>
+            <div id="position_header">
+                <small>
+                    Start and continue button cost 1 credit from bank. Ladders will place position to somewhere in field.
+                </small>
+            </div>
+            <div id="position_header">
+                <small>
+                    The single reel can go from 1 to 12. Additionally there is scatter symbol.
                 </small>
             </div>
         </div>
@@ -187,26 +192,23 @@
             </div>
 
             <div class="side_box"><div id="lightable" class="lightable"></div>
+                    <h5>Inplay Credit:</h5>
+                    <div id="inplay_credit_box" >
+                        <h1 id="inplay_number">0</h1>
+                    </div>
                     <h5>Reel State:</h5>
                     <div id="dice" >
                         <h1 id="dice_number">0</h1>
                     </div>
-                    <hr>
-                    <h5>Buttons:</h5>
                     <button id="dice_button">Start / Continue</button>
                     <button id="collect_button">Collect</button>
-                    <hr>
-                    <h5>Options:</h5>
-                    <div id="options_after">start</div>
+                    <h5>Available options:</h5>
+                    <div id="options_after" class="small-text">start</div>
                     <div id="options_after_reason" class="small_text"></div>
                 <hr>
 
                 <h5>Credit (bank):</h5>
-                <div id="credit_number" class="small_text">100</div>
-                <h5>Inplay:</h5>
-                <div id="inplay_number" class="small_text">0</div>
-
-                <hr>
+                <div id="credit_number" class="small_text">500</div>
                 <h5>Event:</h5>
                 <small id="event_position" class="small_text">loaded_game</small>
                 <h5>Current Pos:</h5>
