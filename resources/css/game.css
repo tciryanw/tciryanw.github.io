@@ -1,6 +1,6 @@
 *{
     text-align: center;
-    font-family: 'Sans', sans-serif;
+    font-family:'Inter','Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 body {
     width: 100vw;
@@ -8,7 +8,6 @@ body {
     display: flex;
     align-items: flex-start;
     justify-content: center;
-
   }
   
   .container {
@@ -31,124 +30,177 @@ body {
 #paytable_box > div{
     height: 70px;
     width: 70px;
-    border-radius: 12px;
-    border: 2px solid rgb(255, 255, 255);
-    background-color: #dadada;
+    border-radius: 0px;
+    border: 2px solid rgba(25, 25, 25, 0.051);
+    background-color: #e1e0e0;
     color:rgb(19, 19, 19);
-    font-size: small;
+    margin: 2px 2px;
+    position: relative;
     text-align: left;
 }
-
+#paytable_text {
+    position: absolute;
+    color: white;
+    font-size: 9px;
+    padding: auto;
+    line-height: 12px;
+    height: 13px;
+    width: 13px;
+    background-color: rgba(1, 1, 4, 0.4);
+    font-weight: 800;
+    top: 4%;
+    left: 4%;
+    transform: translate(-4%, -4%);
+}
 #snake_box{
     display: grid;
     grid-template-columns: auto auto auto auto auto auto;
     grid-template-rows: auto auto auto auto auto auto;
-    margin: 10px auto;
+    margin: auto auto;
     width: auto;
     height: 100%;
-    text-align: left;
+    position: relative;
+    text-align: center;    
+}
+
+#snakebox_text {
+    position: absolute;
+    color: white;
+    font-size: 10px;
+    padding: 1px;
+    width: 23px;
+    height: 10px;
+    background-color: rgba(4, 2, 1, 0.37);
+    font-weight: 800;
+    top: 12%;
+    left: 1%;
+    transform: translate(-1%, -12%);
 }
 
 #snake_box > div{
-    height: 100px;
-    width: 100px;
-    border-radius: 5px;
-    border: 2px solid rgb(255, 255, 255);
-    background-color: #dadada;
+    height: 85px;
+    width: 85px;
+    position: relative;
+    border: 2px solid rgba(25, 25, 25, 0.051);
+    background-color: #e1e0e0;
+    margin: 2px 2px;
     color:rgb(19, 19, 19);
-    text-align: left;
+}
+
+.fade-in {
+	opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 2s;
+}
+
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
 }
 
 .pay_triple_melon {
-    background-image: url(../symbol/3x_melon.png);
+    background-image: linear-gradient(rgba(255,255,255,0.151), rgba(42, 206, 20, 0.153)), url(../symbol/3x_melon.png);
     background-size: contain;    
 }
 .pay_single_melon {
-    background-image: url(../symbol/melon.png);
-    background-size: contain;    
+    background-image: linear-gradient(rgba(255,255,255,0.151), rgba(255,255,255,0.15)),url(../symbol/melon.png);
+    background-size: contain;
 }
 
 .pay_triple_bar {
-    background-image: url(../symbol/3x_bar.png);
+    background-image: linear-gradient(rgba(255,255,255,0.151), rgba(42, 206, 20, 0.153)), url(../symbol/3x_bar.png);
     background-size: contain;    
 }
 .pay_single_bar {
-    background-image: url(../symbol/bar.png);
+    background-image: linear-gradient(rgba(255,255,255,0.151), rgba(255,255,255,0.15)),url(../symbol/bar.png);
     background-size: contain;    
 }
 
 
 
 .pay_triple_bell {
-    background-image: url(../symbol/3x_bell.png);
+    background-image: linear-gradient(rgba(255,255,255,0.151), rgba(42, 206, 20, 0.153)), url(../symbol/3x_bell.png);
     background-size: contain;    
 }
 .pay_single_bell {
-    background-image: url(../symbol/bell.png);
+    background-image: linear-gradient(rgba(255,255,255,0.151), rgba(255,255,255,0.15)),url(../symbol/bell.png);
     background-size: contain;    
 }
 .pay_triple_grapes {
-    background-image: url(../symbol/3x_grapes.png);
+    background-image: linear-gradient(rgba(255,255,255,0.151), rgba(42, 206, 20, 0.153)), url(../symbol/3x_grapes.png);
+
     background-size: contain;    
 }
 .pay_single_grapes {
-    background-image: url(../symbol/grapes.png);
+    background-image: linear-gradient(rgba(255,255,255,0.151), rgba(255,255,255,0.15)),url(../symbol/grapes.png);
     background-size: contain;    
 }
 .pay_triple_mango {
-    background-image: url(../symbol/3x_mango.png);
+    background-image: linear-gradient(rgba(255,255,255,0.151), rgba(42, 206, 20, 0.153)), url(../symbol/3x_mango.png);
+
     background-size: contain;    
 }
 .pay_single_mango {
-    background-image: url(../symbol/mango.png);
+    background-image: linear-gradient(rgba(255,255,255,0.151), rgba(255,255,255,0.15)),url(../symbol/mango.png);
     background-size: contain;    
 }
 .pay_triple_orange {
-    background-image: url(../symbol/3x_orange.png);
-    background-size: contain;    
+    background-image: linear-gradient(rgba(255,255,255,0.151), rgba(42, 206, 20, 0.153)), url(../symbol/3x_orange.png);
+    background-size: contain;
 }
 
 .pay_single_orange {
-    background-image: url(../symbol/orange.png);
+    background-image: linear-gradient(rgba(255,255,255,0.151), rgba(255,255,255,0.15)),url(../symbol/orange.png);
     background-size: contain;    
 }
 
 .pay_triple_lemon {
-    background-image: url(../symbol/3x_lemon.png);
-    background-size: contain;    
+    background-image: linear-gradient(rgba(255,255,255,0.151), rgba(42, 206, 20, 0.153)), url(../symbol/3x_lemon.png);
+    background-size: contain;
 }
 
 .pay_single_lemon {
-    background-image: url(../symbol/lemon.png);
+    background-image: linear-gradient(rgba(255,255,255,0.151), rgba(255,255,255,0.15)), url(../symbol/lemon.png);
     background-size: contain;    
 }
 
 .pay_triple_cherry {
-    background-image: url(../symbol/3x_cherry.png);
+    background-image: linear-gradient(rgba(255,255,255,0.151), rgba(42, 206, 20, 0.153)), url(../symbol/3x_cherry.png);
     background-size: contain;    
 }
 
 .pay_single_cherry {
-    background-image: url(../symbol/cherry.png);
+    background-image: linear-gradient(rgba(255,255,255,0.151), rgba(255,255,255,0.15)), url(../symbol/cherry.png);
     background-size: contain;    
 }
 
 /* snake backgrounds*/
 
 .snake_20{
-    background-image: url(../snakes/snake_20.png);
+    background-image: linear-gradient(rgba(255, 182, 182, 0.151), rgba(225, 42, 14, 0.153)), url(../snakes/snake_20.png);
+    background-size: contain;
 }
 #box_33{
-    background-image: url(../snakes/snake_33.png);
+    background-image: linear-gradient(rgba(255, 182, 182, 0.151), rgba(225, 42, 14, 0.153)), url(../snakes/snake_33.png);
+    background-size: contain;
 }
 #box_41{
-    background-image: url(../snakes/snake_41.png);
+    background-image: linear-gradient(rgba(255, 182, 182, 0.151), rgba(225, 42, 14, 0.153)), url(../snakes/snake_41.png);
+    background-size: contain;
 }
 #box_44{
-    background-image: url(../snakes/snake_44.png);
+    background-image: linear-gradient(rgba(255, 182, 182, 0.151), rgba(225, 42, 14, 0.153)), url(../snakes/snake_44.png);
+    background-size: contain;
 }
 #box_47{
-    background-image: url(../snakes/snake_47.png);
+    background-image: linear-gradient(rgba(255, 182, 182, 0.151), rgba(225, 42, 14, 0.153)), url(../snakes/snake_47.png);
+    background-size: contain;
 }
 
 
@@ -169,7 +221,9 @@ body {
 #box_40{
     background-image: url(../ladders/ladder_40.png);
 }
-
+.alerts {
+    background-color: yellow;
+}
 
 .side_box{
     width: 32%;
@@ -196,7 +250,6 @@ ul{
 li{
     font-size: 10px;
     padding: 10px;
-    font-family: 'Sans', sans-serif;
     margin: 0 10%;
     text-align: justify;
 }
@@ -231,54 +284,86 @@ h5 {
     padding: 10px;
     background-color: rgb(255, 255, 255);
     margin: auto;
-    font-family: 'Sans', sans-serif;
     border-radius: 15px;
 }
-#dice_button{
-    padding: 10px;
-    background-color: rgb(255, 255, 255);
-    margin: auto;
-    font-family: 'Sans', sans-serif;
-    border-radius: 15px;
+#dice_button:disabled {
+    opacity: 0.2;
+    color: white;
 }
 
+#dice_button{
+    background-color: #adfdb6; /* Green */
+    border: none;
+    letter-spacing: 1px 1px;
+    color: black;
+    padding: 14px 25px;
+    font-weight: 800;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 14px 2px;
+    transition-duration: 0.2s ease;
+    cursor: pointer;
+  }
+  
 #dice_number{
     font-size: 25px;
 }
 
+
+@keyframes fast_blinker {
+    50% {
+      opacity: 0.45;
+    }
+  }
+  
+
+@keyframes blinker {
+    50% {
+      opacity: 0.2;
+    }
+  }
+  
+
 #light_active{
-    background-color: rgba(242, 255, 2, 0.291);
-    width: 80px;
-    color: rgb(248, 245, 245);
-    height: 30px;
-    bottom: 0;
-    border-radius: 10px;
-    margin: 1px auto;
+    background-color: rgba(255, 251, 0, 0.679);
+    border: -2px solid rgb(255, 188, 4);
+    height: 85px;
+    display: flex;
+    width: 100%;
+    animation: blinker 1250ms linear infinite;
+    font-size: small;
+    font-weight: medium;
+    text-align: center;
 }
 
 #light_active_paytable{
-    background-color: rgba(242, 255, 2, 0.291);
-    width: 50px;
-    color: rgb(248, 245, 245);
-    height: 10px;
-    bottom: 0;
-    border-radius: 10px;
+    background-color: rgba(255, 251, 0, 0.579);
+    height: 70px;
+    display: flex;
+    width: 100%;
+    animation: blinker 1150ms linear infinite;
+    line-height: 28px;
+    font-size: small;
+    font-weight: medium;
+    text-align: center;
     margin: 1px auto;
 }
 
-
-
 #player_coin1{
-    background-color: rgb(14, 2, 255);
-    width: 60px;
-    color: rgb(248, 245, 245);
-    height: 60px;
+    background-color: rgba(0, 110, 255, 0.996);
+    border: 0px solid rgb(0, 0, 0, 0.95);
+    height: 85px;
+    line-height: 80px;
+    color: white;
+    text-shadow: 1px 1px black;
+    width: 100%;
+    animation: fast_blinker 850ms linear infinite;
     border-radius: 10px;
-    margin: 10px auto;
+    font-size: 40px;
+    font-weight: medium;
     text-align: center;
-    line-height: 35px;
-    font-size: 14px;
-    font-family: 'Sans', sans-serif;
 }
 
 #start_coin{

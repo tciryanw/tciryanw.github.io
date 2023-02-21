@@ -34,7 +34,7 @@ var player_counter = [0,0,0]
 
 var player1_coin = document.createElement('div')
 player1_coin.setAttribute('id','player_coin1')
-player1_coin.innerText = 'Player'
+player1_coin.innerText = 'P'
 
 
 window.addEventListener('load',start)
@@ -61,11 +61,13 @@ function update_inplay(number) {
 }
 
 function collect_function() {
+    collect_button.disabled = true
     if(inplay_credit > 0) {
         if(reset_game === false) {
             update_bank((bank_credit + inplay_credit))
             update_inplay(0)
             reset_game = true
+            collect_button.disabled = true
         }
     }
 }
@@ -74,16 +76,22 @@ function gamble_function() {
 }
 
 function start_function() {
+    dice_button.disabled = true;
+    collect_button.disabled = true
+    options_after.innerHTML = "<span style='color: black; font-weight: 700;'>...</span>"
+    options_after_reason.innerText = "(spinning game)"
     update_bank(bank_credit - 1)
     dice_rolled()
 }
 
 function dice_rolled(){
     lights_off()
-    var dicenumber_rolled = random()
-    //var dicenumber_rolled = 5
-    dice_number.innerText = dicenumber_rolled
-    append_element(player_picker(), dicenumber_rolled)
+    setTimeout(() => { // Removed i from closure
+        var dicenumber_rolled = random()
+        //var dicenumber_rolled = 5
+        dice_number.innerText = dicenumber_rolled
+        append_element(player_picker(), dicenumber_rolled)
+    }, 250)
 }
 
 function random(){
@@ -127,25 +135,13 @@ function sleepFor(sleepDuration){
     while(new Date().getTime() < now + sleepDuration){ /* Do nothing */ }
 }
 
-function lights_off(){
-    var lineItem = document.querySelectorAll('.lightable')
-    lineItem.forEach((item, index) => { // Add item to closure
-    setTimeout(() => { // Removed i from closure
-            var old_id = item.id;
-            item.innerHTML = "";
-            item.innerText = old_id;
-    }, 5 * (index + 1)) // Increase the delay time by 20ms for each item
-});
-}
-
-
 function box_generate(i){
     var light_active_box = document.createElement('div')
     light_active_box.setAttribute('id','light_active')
     return light_active_box;
 }
 
-function box_generate(i){
+function box_generate_paytable(i){
     var light_active_box = document.createElement('div')
     light_active_box.setAttribute('id','light_active_paytable')
     return light_active_box;
@@ -155,7 +151,7 @@ function lights_off(){
     var lineItem = document.querySelectorAll('.lightable')
     lineItem.forEach((item, index) => { // Add item to closure
             item.innerHTML = ""
-});
+    });
 }
 
 function lights_on(number){
@@ -166,7 +162,7 @@ function lights_on(number){
             if(box_id < (number)) {
                 item.append(box_generate(box_id))
             }
-        }, 5 * (index + 2)) // Increase the delay time by 20ms for each item
+        }, 1 * (index + 2)) // Increase the delay time by 20ms for each item
     });
 }
 
@@ -176,15 +172,7 @@ function append_element(player, dicenumber_rolled){
         var player_next_position = document.getElementById(id_creator(0))
         player_next_position.append(player1_coin)
         player_counter[player] = 0
-        paytable_state = [0,0,0,0,0,0,0,0]
-        paytable_light_state = [0,0,0,0,0,0,0,0]
-        for(i=0; i<win_single_symbols.length; i++){
-            var light_paytable_id = '.lightable_paytable_' + win_single_symbols[i] 
-            var lineItem = document.querySelectorAll(light_paytable_id)
-            lineItem.forEach((item, index) => { // Add item to closure
-                    item.innerHTML = ""
-            });
-        }
+        reset_paytable_lights()
         reset_game = false
     }
     setTimeout(() => { // Removed i from closure
@@ -198,23 +186,29 @@ function append_element(player, dicenumber_rolled){
         payout_check(player_counter[player],player)
         lights_on(player_counter[player])
         options_after_game()
-    }, 200) 
+    }, 350) 
 }
 
 function options_after_game() {
     if(reset_game === true) {
         update_inplay(0)
-        options_after.innerHTML = "<span style='color: red; font-weight: 500;'>start again (lost)</span>"
-        options_after_reason.innerText = "(hit empty tile, lost any inplay credit)"
+        reset_paytable_lights()
+        dice_button.disabled = false;
+        options_after.innerHTML = "<span style='color: red; font-weight: 700;'>start again (lost)</span>"
+        options_after_reason.innerText = "(empty tile, lost all inplay cr)"
     }
     if(reset_game === false) {
         if(inplay_credit > 0) {
-        options_after.innerHTML = "<span style='color: green; font-weight: 500;'>continue or collect "+inplay_credit+"</span>"
-        options_after_reason.innerText = "(you risk losing all inplay credit)"
+        dice_button.disabled = false;
+        collect_button.disabled = false;
+        options_after.innerHTML = "<span style='color: green; font-weight: 700;'>continue or collect "+inplay_credit+"</span>"
+        options_after_reason.innerText = "(you risk losing all inplay cr)"
 
-        } else {
-            options_after.innerHTML = "<span style='color: orange; font-weight: 500;'>continue</span>"
-            options_after_reason.innerText = "(you have hit a single fruit, ladder or snake)"
+       } else {
+            collect_button.disabled = false;
+            dice_button.disabled = false;
+            options_after.innerHTML = "<span style='color: orange; font-weight: 700;'>continue</span>"
+            options_after_reason.innerText = "(hit single fruit, ladder or snake)"
         }
     }
 }
@@ -236,7 +230,20 @@ function snake_or_ladder(counter , player){
     }
 }
 
+function reset_paytable_lights() {
+    paytable_light_state = [0,0,0,0,0,0,0,0]
+    paytable_state = [0,0,0,0,0,0,0,0]
+    for(i=0; i<win_single_symbols.length; i++){
+        var light_paytable_id = '.lightable_paytable_' + win_single_symbols[i] 
+        var lineItem = document.querySelectorAll(light_paytable_id)
+        lineItem.forEach((item, index) => { // loop through all symbols and set lightable div empty
+                item.innerHTML = ""
+        });
+    }
+}
+
 function update_paytable_single(symbol_id) {
+    paytable_state[symbol_id] = (paytable_state[symbol_id] + 1)
     if(paytable_state[symbol_id] > 2) {
         if(paytable_state[symbol_id] < 4) {
         update_inplay(paytable_payout[symbol_id] + inplay_credit)
@@ -244,7 +251,6 @@ function update_paytable_single(symbol_id) {
         }
         paytable_light_state[symbol_id] = 3;
     } else {
-        paytable_state[symbol_id] = (paytable_state[symbol_id] + 1)
         paytable_light_state[symbol_id] = (paytable_state[symbol_id])
         update_log(player_counter[1], "Paytable state updated to: "+paytable_state[symbol_id])
     }
@@ -258,10 +264,9 @@ function paytable_lights_update(symbol_id,state){
     setTimeout(() => { // Removed i from closure
         var box_id = (item.id).replace('paytable_lightable_', '');
         if(box_id < (state+1)) {
-            item.append(box_generate(box_id))
-            item.innerText = "LIGHT"
+            item.append(box_generate_paytable(box_id))
         }
-        }, 5 * (index + 2)) // Increase the delay time by 20ms for each item
+        }, 2 * (index + 2)) // Increase the delay time by 20ms for each item
     });
 }
 
