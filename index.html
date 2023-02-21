@@ -1,21 +1,19 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Snakes & Ladders</title>
-        <link rel="stylesheet" href="resources/css/game.css">
-        <link rel="stylesheet" href="resources/css/loading.css">
-<!-- Inter, Playfair Display -->
-<link
-  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700|Playfair+Display:wght@400;700&display=swap"
-  rel="stylesheet"
-/>
-    </head>
 
-    <body>
-        <div class="container">
+<head>
+    <title>Snakes & Ladders</title>
+    <link rel="stylesheet" href="resources/css/game.css">
+    <link rel="stylesheet" href="resources/css/loading.css">
+    <!-- Inter, Playfair, Betfair, Grossvenor Display -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700|Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="container">
         <div id="position_header">
             <small>
-                This is a client-side test application for remake software inside a barcrest hardware slot. View pic of <a href="resources/original_game.jpg" >hardware slotmachine</a>.
+                This is a client-side test application for remake software inside a barcrest hardware slot. View pic of <a href="resources/original_game.jpg">hardware slotmachine</a>.
             </small>
             <hr>
             <div id="position_header">
@@ -35,11 +33,8 @@
             </div>
         </div>
         <hr>
-        <div id="alert-box" class="alert-box-class">
-                <div id="alert-message" class="alert-message-class">ALERT</div>
-        </div>
 
-        <div id="container_box" >
+        <div id="container_box">
             <div class="side_box">
                 <div id="paytable_box">
                     <div id="paytable_7_1" class="pay_single_bar">
@@ -106,7 +101,7 @@
                         <div id="paytable_text">3</div>
                     </div>
 
-    
+
                     <div id="paytable_2_1" class="pay_single_orange">
                         <div id="paytable_lightable_1" class="lightable_paytable_2"></div>
                         <div id="paytable_text">1</div>
@@ -148,71 +143,215 @@
             </div>
 
             <div id="snake_box">
-                <div id="box_47"><div id="lightable_47" class="lightable"></div><div id="snakebox_text">47</div></div>
-                <div id="box_46" class="pay_triple_bar"><div id="lightable_46" class="lightable"></div><div id="snakebox_text">46</div></div>
-                <div id="box_45" class="pay_single_bar"><div id="lightable_45" class="lightable"></div><div id="snakebox_text">45</div></div>
-                <div id="box_44"><div id="lightable_44" class="lightable"></div><div id="snakebox_text">44</div></div>
-                <div id="box_43"><div id="lightable_43" class="lightable"></div><div id="snakebox_text">43</div></div>
-                <div id="box_42"><div id="lightable_42" class="lightable"></div><div id="snakebox_text">42</div></div>
-                <div id="box_36" class="pay_single_melon"><div id="lightable_36" class="lightable"></div><div id="snakebox_text">36</div></div>
-                <div id="box_37"><div id="lightable_37" class="lightable"></div><div id="snakebox_text">37</div></div>
-                <div id="box_38" class="pay_triple_melon"><div id="lightable_38" class="lightable"></div><div id="snakebox_text">38</div></div>
-                <div id="box_39"><div id="lightable_39" class="lightable"></div><div id="snakebox_text">39</div></div>
-                <div id="box_40"><div id="lightable_40" class="lightable"></div><div id="snakebox_text">40</div></div>
-                <div id="box_41"><div id="lightable_41" class="lightable"></div><div id="snakebox_text">41</div></div>
-                <div id="box_35"><div id="lightable_35" class="lightable"></div><div id="snakebox_text">35</div></div>
-                <div id="box_34" class="pay_triple_bell"><div id="lightable_34" class="lightable"></div><div id="snakebox_text">34</div></div>
-                <div id="box_33"><div id="lightable_33" class="lightable"></div><div id="snakebox_text">33</div></div>
-                <div id="box_32" class="pay_single_bell"><div id="lightable_32" class="lightable"></div><div id="snakebox_text">32</div></div>
-                <div id="box_31"><div id="lightable_31" class="lightable"></div><div id="snakebox_text">31</div></div>
-                <div id="box_30"><div id="lightable_30" class="lightable"></div><div id="snakebox_text">30</div></div>
-                <div id="box_24"><div id="lightable_24" class="lightable"></div><div id="snakebox_text">24</div></div>
-                <div id="box_25" class="pay_single_grapes"><div id="lightable_25" class="lightable"></div><div id="snakebox_text">25</div></div>
-                <div id="box_26"><div id="lightable_26" class="lightable"></div><div id="snakebox_text">26</div></div>
-                <div id="box_27" class="pay_triple_grapes"><div id="lightable_27" class="lightable"></div><div id="snakebox_text">27</div></div>
-                <div id="box_28"><div id="lightable_28" class="lightable"></div><div id="snakebox_text">28</div></div>
-                <div id="box_29"><div id="lightable_29" class="lightable"></div><div id="snakebox_text">29</div></div>
-                <div id="box_23"><div id="lightable_23" class="lightable"></div><div id="snakebox_text">23</div></div>
-                <div id="box_22"><div id="lightable_22" class="lightable"></div><div id="snakebox_text">22</div></div>
-                <div id="box_21" class="pay_single_mango"><div id="lightable_21" class="lightable"></div><div id="snakebox_text">21</div></div>
-                <div id="box_20" class="snake_20"><div id="lightable_20" class="lightable"></div><div id="snakebox_text">20</div></div>
-                <div id="box_19" class="pay_triple_mango"><div id="lightable_19" class="lightable"></div><div id="snakebox_text">19</div></div>
-                <div id="box_18"><div id="lightable_18" class="lightable"></div><div id="snakebox_text">18</div></div>
-                <div id="box_12"><div id="lightable_12" class="lightable"></div><div id="snakebox_text">12</div></div>
-                <div id="box_13" class="pay_triple_orange"><div id="lightable_13" class="lightable"></div><div id="snakebox_text">13</div></div>
-                <div id="box_14"><div id="lightable_14" class="lightable"></div><div id="snakebox_text">14</div></div>
-                <div id="box_15"><div id="lightable_15" class="lightable"></div><div id="snakebox_text">15</div></div>
-                <div id="box_16" class="pay_single_orange"><div id="lightable_16" class="lightable"></div><div id="snakebox_text">16</div></div>
-                <div id="box_17"><div id="lightable_17" class="lightable"></div><div id="snakebox_text">17</div></div>
-                <div id="box_11"><div id="lightable_11" class="lightable"></div><div id="snakebox_text">11</div></div>
-                <div id="box_10" class="pay_single_lemon"><div id="lightable_10" class="lightable"></div><div id="snakebox_text">10</div></div>
-                <div id="box_9"><div id="lightable_9" class="lightable"></div><div id="snakebox_text">9</div></div>
-                <div id="box_8" class="pay_triple_lemon"><div id="lightable_8" class="lightable"></div><div id="snakebox_text">8</div></div>
-                <div id="box_7"><div id="lightable_7" class="lightable"></div><div id="snakebox_text">7</div></div>
-                <div id="box_6"><div id="lightable_6" class="lightable"></div><div id="snakebox_text">6</div></div>
-                <div id="box_0"><span id="start_coin"><div id="lightable" class="lightable"></div>start</span></div>
-                <div id="box_1"><div id="lightable_1" class="lightable"></div><div id="snakebox_text">1</div></div>
-                <div id="box_2" class="pay_triple_cherry"><div id="lightable_2" class="lightable"></div><div id="snakebox_text">
-                2</div></div>
-                <div id="box_3"><div id="lightable_3" class="lightable"></div><div id="snakebox_text">3</div></div>
-                <div id="box_4"><div id="lightable_4" class="lightable"></div><div id="snakebox_text">4</div></div>
-                <div id="box_5" class="pay_single_cherry"><div id="lightable_5" class="lightable"></div><div id="snakebox_text">5</div></div>
+                <div id="box_47">
+                    <div id="lightable_47" class="lightable"></div>
+                    <div id="snakebox_text">47</div>
+                </div>
+                <div id="box_46" class="pay_triple_bar">
+                    <div id="lightable_46" class="lightable"></div>
+                    <div id="snakebox_text">46</div>
+                </div>
+                <div id="box_45" class="pay_single_bar">
+                    <div id="lightable_45" class="lightable"></div>
+                    <div id="snakebox_text">45</div>
+                </div>
+                <div id="box_44">
+                    <div id="lightable_44" class="lightable"></div>
+                    <div id="snakebox_text">44</div>
+                </div>
+                <div id="box_43">
+                    <div id="lightable_43" class="lightable"></div>
+                    <div id="snakebox_text">43</div>
+                </div>
+                <div id="box_42">
+                    <div id="lightable_42" class="lightable"></div>
+                    <div id="snakebox_text">42</div>
+                </div>
+                <div id="box_36" class="pay_single_melon">
+                    <div id="lightable_36" class="lightable"></div>
+                    <div id="snakebox_text">36</div>
+                </div>
+                <div id="box_37">
+                    <div id="lightable_37" class="lightable"></div>
+                    <div id="snakebox_text">37</div>
+                </div>
+                <div id="box_38" class="pay_triple_melon">
+                    <div id="lightable_38" class="lightable"></div>
+                    <div id="snakebox_text">38</div>
+                </div>
+                <div id="box_39">
+                    <div id="lightable_39" class="lightable"></div>
+                    <div id="snakebox_text">39</div>
+                </div>
+                <div id="box_40">
+                    <div id="lightable_40" class="lightable"></div>
+                    <div id="snakebox_text">40</div>
+                </div>
+                <div id="box_41">
+                    <div id="lightable_41" class="lightable"></div>
+                    <div id="snakebox_text">41</div>
+                </div>
+                <div id="box_35">
+                    <div id="lightable_35" class="lightable"></div>
+                    <div id="snakebox_text">35</div>
+                </div>
+                <div id="box_34" class="pay_triple_bell">
+                    <div id="lightable_34" class="lightable"></div>
+                    <div id="snakebox_text">34</div>
+                </div>
+                <div id="box_33">
+                    <div id="lightable_33" class="lightable"></div>
+                    <div id="snakebox_text">33</div>
+                </div>
+                <div id="box_32" class="pay_single_bell">
+                    <div id="lightable_32" class="lightable"></div>
+                    <div id="snakebox_text">32</div>
+                </div>
+                <div id="box_31">
+                    <div id="lightable_31" class="lightable"></div>
+                    <div id="snakebox_text">31</div>
+                </div>
+                <div id="box_30">
+                    <div id="lightable_30" class="lightable"></div>
+                    <div id="snakebox_text">30</div>
+                </div>
+                <div id="box_24">
+                    <div id="lightable_24" class="lightable"></div>
+                    <div id="snakebox_text">24</div>
+                </div>
+                <div id="box_25" class="pay_single_grapes">
+                    <div id="lightable_25" class="lightable"></div>
+                    <div id="snakebox_text">25</div>
+                </div>
+                <div id="box_26">
+                    <div id="lightable_26" class="lightable"></div>
+                    <div id="snakebox_text">26</div>
+                </div>
+                <div id="box_27" class="pay_triple_grapes">
+                    <div id="lightable_27" class="lightable"></div>
+                    <div id="snakebox_text">27</div>
+                </div>
+                <div id="box_28">
+                    <div id="lightable_28" class="lightable"></div>
+                    <div id="snakebox_text">28</div>
+                </div>
+                <div id="box_29">
+                    <div id="lightable_29" class="lightable"></div>
+                    <div id="snakebox_text">29</div>
+                </div>
+                <div id="box_23">
+                    <div id="lightable_23" class="lightable"></div>
+                    <div id="snakebox_text">23</div>
+                </div>
+                <div id="box_22">
+                    <div id="lightable_22" class="lightable"></div>
+                    <div id="snakebox_text">22</div>
+                </div>
+                <div id="box_21" class="pay_single_mango">
+                    <div id="lightable_21" class="lightable"></div>
+                    <div id="snakebox_text">21</div>
+                </div>
+                <div id="box_20" class="snake_20">
+                    <div id="lightable_20" class="lightable"></div>
+                    <div id="snakebox_text">20</div>
+                </div>
+                <div id="box_19" class="pay_triple_mango">
+                    <div id="lightable_19" class="lightable"></div>
+                    <div id="snakebox_text">19</div>
+                </div>
+                <div id="box_18">
+                    <div id="lightable_18" class="lightable"></div>
+                    <div id="snakebox_text">18</div>
+                </div>
+                <div id="box_12">
+                    <div id="lightable_12" class="lightable"></div>
+                    <div id="snakebox_text">12</div>
+                </div>
+                <div id="box_13" class="pay_triple_orange">
+                    <div id="lightable_13" class="lightable"></div>
+                    <div id="snakebox_text">13</div>
+                </div>
+                <div id="box_14">
+                    <div id="lightable_14" class="lightable"></div>
+                    <div id="snakebox_text">14</div>
+                </div>
+                <div id="box_15">
+                    <div id="lightable_15" class="lightable"></div>
+                    <div id="snakebox_text">15</div>
+                </div>
+                <div id="box_16" class="pay_single_orange">
+                    <div id="lightable_16" class="lightable"></div>
+                    <div id="snakebox_text">16</div>
+                </div>
+                <div id="box_17">
+                    <div id="lightable_17" class="lightable"></div>
+                    <div id="snakebox_text">17</div>
+                </div>
+                <div id="box_11">
+                    <div id="lightable_11" class="lightable"></div>
+                    <div id="snakebox_text">11</div>
+                </div>
+                <div id="box_10" class="pay_single_lemon">
+                    <div id="lightable_10" class="lightable"></div>
+                    <div id="snakebox_text">10</div>
+                </div>
+                <div id="box_9">
+                    <div id="lightable_9" class="lightable"></div>
+                    <div id="snakebox_text">9</div>
+                </div>
+                <div id="box_8" class="pay_triple_lemon">
+                    <div id="lightable_8" class="lightable"></div>
+                    <div id="snakebox_text">8</div>
+                </div>
+                <div id="box_7">
+                    <div id="lightable_7" class="lightable"></div>
+                    <div id="snakebox_text">7</div>
+                </div>
+                <div id="box_6">
+                    <div id="lightable_6" class="lightable"></div>
+                    <div id="snakebox_text">6</div>
+                </div>
+                <div id="box_0"><span id="start_coin">
+                        <div id="lightable" class="lightable"></div>start
+                    </span></div>
+                <div id="box_1">
+                    <div id="lightable_1" class="lightable"></div>
+                    <div id="snakebox_text">1</div>
+                </div>
+                <div id="box_2" class="pay_triple_cherry">
+                    <div id="lightable_2" class="lightable"></div>
+                    <div id="snakebox_text">
+                        2</div>
+                </div>
+                <div id="box_3">
+                    <div id="lightable_3" class="lightable"></div>
+                    <div id="snakebox_text">3</div>
+                </div>
+                <div id="box_4">
+                    <div id="lightable_4" class="lightable"></div>
+                    <div id="snakebox_text">4</div>
+                </div>
+                <div id="box_5" class="pay_single_cherry">
+                    <div id="lightable_5" class="lightable"></div>
+                    <div id="snakebox_text">5</div>
+                </div>
             </div>
 
-            <div class="side_box"><div id="lightable" class="lightable"></div>
-                    <h5>Inplay Credit:</h5>
-                    <div id="inplay_credit_box" >
-                        <h1 id="inplay_number" class="fade-in">0</h1>
-                    </div>
-                    <h5>Reel State:</h5>
-                    <div id="dice" >
-                        <h1 id="dice_number">0</h1>
-                    </div>
-                    <button id="dice_button">Start / Continue</button>
-                    <button id="collect_button">Collect</button>
-                    <h5>Available options:</h5>
-                    <div id="options_after" class="small-text">start</div>
-                    <div id="options_after_reason" class="small_text"></div>
+            <div class="side_box">
+                <div id="lightable" class="lightable"></div>
+                <h5>Inplay Credit:</h5>
+                <div id="inplay_credit_box">
+                    <h1 id="inplay_number" class="fade-in">0</h1>
+                </div>
+                <h5>Reel State:</h5>
+                <div id="dice">
+                    <h1 id="dice_number">0</h1>
+                </div>
+                <button id="dice_button">Start / Continue</button>
+                <button id="collect_button">Collect</button>
+                <h5>Available options:</h5>
+                <div id="options_after" class="small-text">start</div>
+                <div id="options_after_reason" class="small_text"></div>
                 <hr>
 
                 <h5>Credit (bank):</h5>
@@ -229,6 +368,7 @@
 
         </div>
     </div>
-        <script type="text/javascript" src="resources/js/game.js" ></script>
-    </body>
+    <script type="text/javascript" src="resources/js/game.js"></script>
+</body>
+
 </html>
